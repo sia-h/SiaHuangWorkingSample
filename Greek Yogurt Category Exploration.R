@@ -1,4 +1,5 @@
 rm(list = ls())
+setwd("D:/R_wd")
 
 ###-----1-----###
 library(foreign)
