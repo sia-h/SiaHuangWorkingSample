@@ -1,6 +1,6 @@
 rm(list = ls())
 
-###-----Q1-----###
+###-----1-----###
 library(foreign)
 filename = "Wegmans Survey 1"
 yogurtlab = read.spss(paste(filename,".sav",sep=""),
@@ -22,7 +22,7 @@ chisq.test(sampleSex, p=popSex)
 weight = popSex / prop.table(sampleSex)
 
 
-###-----Q2-----###
+###-----2-----###
 # Subset importance ratings (Q6)
 Q6 = yogurt[,47:59]
 impvars = c("AllNatural","Blended","CalorieLevel","Consistency","FatLevel","FruitOnTheBottom",
@@ -53,9 +53,8 @@ plot + geom_bar(position=dodge, stat="identity", width=0.75) +
     theme(axis.text.x=element_text(angle=30, hjust=1, size=12)) +
     theme(panel.grid.major=element_blank(), panel.background=element_blank())
 
-###-----Q3-----###
 
-###-----Q4-----###
+###-----3-----###
 # Subset brand attribute ratings(all natural=106&132, price=110&138, taste=113&140) for Fage(Q24) and Oikos(Q30)
 Q4=yogurt[,c(106,110,113,132,138,140)]
 # Define 6("unsure") as NA
@@ -65,7 +64,7 @@ t.test(Q4[,1], Q4[,4], na.rm=TRUE)
 t.test(Q4[,2], Q4[,5], na.rm=TRUE)
 t.test(Q4[,3], Q4[,6], na.rm=TRUE)
 
-###-----Q5-----###
+###-----5-----###
 # Add cooking column for importance ratings(Q6)
 Q6$cooking = yogurt$Question12DoyouuseGreekYogurtforcooking
 usageDF = Q6[,c("AllNatural","Organic","rbSTFree","Price","cooking")]
