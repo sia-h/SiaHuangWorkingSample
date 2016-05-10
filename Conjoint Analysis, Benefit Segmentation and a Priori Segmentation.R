@@ -15,7 +15,6 @@ head(partworths)
 # segmenting individuals
 library(cluster) 
 library(fpc)
-set.seed(123456)
 
 ######-----cluster analysis-----######
 toclust = partworths;
